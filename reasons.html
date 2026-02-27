@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Why you</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+<div id="balloonField"></div>
+<div class="glass">
+  <h1>You always ask me why I choose you or what do I like about you?</h1>
+  <p class="subtitle">Here's few reasons ✨</p>
+
+  <div class="grid" id="reasonsGrid"></div>
+
+  <a class="btn" href="future.html">Final Message</a>
+</div>
+
+<audio id="bgMusic" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+<script>
+const orderedReasons = [
+"You are not an option, but my one and only choice.",
+"You are not just a person, but a feeling.",
+"Your genuine heart.",
+"Your honesty.",
+"Your emotional maturity.",
+"Your discipline.",
+"Your loyalty.",
+"Your patience.",
+"Your resilience.",
+"The way you never give up.",
+"How you make me feel like I’m home.",
+"Your steady presence.",
+"Your face that lights up my world.",
+"Your grounded nature.",
+"Your sense of humor.",
+"The way you make me feel safe.",
+"Your thoughtfulness.",
+"Your protective nature.",
+"Your balanced mindset.",
+"Your quiet confidence.",
+"Your consistency.",
+"Your depth of thinking.",
+"Your calm energy.",
+"Your sincerity.",
+"Your self-control.",
+"Your clarity.",
+"Your strong values.",
+"Your peaceful vibe.",
+"Your natural leadership.",
+"Your persistence.",
+"Your strength in tough times.",
+"Your quiet determination.",
+"Your respectful nature.",
+"Your inner calm.",
+"Your patience with life.",
+"Your unique way of loving me.",
+"Your mature thinking.",
+"Your strong character.",
+"Your focus on what matters.",
+"Your silent support.",
+"Your composed nature.",
+"Your grounded energy.",
+"Your thoughtful decisions.",
+"Your consistent effort.",
+"Your quiet wisdom.",
+"Your balanced emotions.",
+"Your calm reactions.",
+"Your strong mindset.",
+"Your discipline in hard moments.",
+"Your steady progress.",
+"Your resilience under pressure.",
+"Your authentic self.",
+"Your strong presence.",
+"Your emotional strength.",
+"Your peaceful aura.",
+"Your quiet charm.",
+"Your deep thinking.",
+"Your focus during chaos.",
+"Your stable energy.",
+"Your honest intentions.",
+"Your respectful behavior.",
+"Your natural calm.",
+"Your steady heart.",
+"Your genuine smile.",
+"Your patient nature.",
+"Your quiet courage.",
+"Your inner strength.",
+"Your peaceful mindset.",
+"Your thoughtful care.",
+"Your emotional balance.",
+"Your maturity.",
+"Your dependable nature.",
+"Your calm focus.",
+"Your stable personality.",
+"Your strong will.",
+"Your grounded heart.",
+"Your quiet loyalty.",
+"Your calm presence.",
+"I feel safe with you.",
+"Your thoughtful silence.",
+"Your peaceful strength.",
+"Your steady mindset.",
+"Your strong character.",
+"Your quiet power.",
+"Your emotional depth.",
+"Your calm soul.",
+"Your focused nature.",
+"Your sincere heart.",
+"Your resilient spirit.",
+"Your balanced thinking.",
+"Your steady growth.",
+"Your calm determination.",
+"Your quiet brilliance.",
+"Your strong presence in this world.",
+"You respect women.",
+"Your meaningful existence.",
+"Your impact, even when you don’t see it.",
+"Your irreplaceable presence.",
+"you are the best person I’ve ever known."
+];
+while (orderedReasons.length < 100) {
+  orderedReasons.push("Simply... you,everything about you.");
+}
+
+const grid=document.getElementById("reasonsGrid");
+
+for(let i=0;i<100;i++){
+  const card=document.createElement("div");
+  card.className="flip-card";
+
+  card.innerHTML=`
+    <div class="flip-inner">
+      <div class="flip-face flip-front">
+        Reason ${i+1}
+      </div>
+      <div class="flip-face flip-back">
+        ${orderedReasons[i]}
+      </div>
+    </div>
+  `;
+
+  // mobile tap support
+  card.addEventListener("click",()=>{
+    card.classList.toggle("flipped");
+  });
+
+  grid.appendChild(card);
+}
+</script>
+
+</body>
+</html>
